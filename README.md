@@ -1,16 +1,14 @@
 # beritapps
 
-A new Flutter project.
+News App developed with Flutter and API from [News API](https://newsapi.org)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is using flavor works for Android and iOS. So, if you want to run as dev mode you can use this command.
+```
+flutter run -t lib/main_dev.dart --flavor dev -d <device_id>
+```
+or in production mode.
+```
+flutter run --release -t lib/main_prod.dart --flavor prod -d <device_id>
+```
