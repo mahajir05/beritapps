@@ -5,8 +5,8 @@ part 'category_news_model.g.dart';
 
 @JsonSerializable()
 class CategoryNewsModel extends Equatable {
-  final String image;
-  final String title;
+  final String? image;
+  final String? title;
 
   const CategoryNewsModel({
     required this.image,
@@ -19,7 +19,7 @@ class CategoryNewsModel extends Equatable {
   Map<String, dynamic> toJson() => _$CategoryNewsModelToJson(this);
 
   @override
-  List<Object> get props => [image, title];
+  List<Object?> get props => [image, title];
 
   @override
   String toString() {

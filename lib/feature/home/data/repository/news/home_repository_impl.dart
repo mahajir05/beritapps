@@ -8,11 +8,11 @@ import '../../datasource/home_remote_data_source.dart';
 import '../../../domain/repository/news/home_repository.dart';
 
 class HomeRepositoryImpl implements HomeRepository {
-  final HomeRemoteDataSource newsRemoteDataSource;
+  final HomeRemoteDataSource homeRemoteDataSource;
   final NetworkInfo networkInfo;
 
   HomeRepositoryImpl({
-    required this.newsRemoteDataSource,
+    required this.homeRemoteDataSource,
     required this.networkInfo,
   });
 
@@ -22,7 +22,7 @@ class HomeRepositoryImpl implements HomeRepository {
     var isConnected = await networkInfo.isConnected;
     if (isConnected) {
       try {
-        final result = await newsRemoteDataSource.getTopHeadlinesNews(
+        final result = await homeRemoteDataSource.getTopHeadlinesNews(
             countryCode: countryCode, category: category);
         return Right(result.data ?? []);
       } on ClientException catch (e) {

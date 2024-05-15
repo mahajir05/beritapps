@@ -32,7 +32,7 @@ Future<void> init() async {
 
   // Repository
   sl.registerLazySingleton<HomeRepository>(
-      () => HomeRepositoryImpl(newsRemoteDataSource: sl(), networkInfo: sl()));
+      () => HomeRepositoryImpl(homeRemoteDataSource: sl(), networkInfo: sl()));
   sl.registerLazySingleton<SearchRepository>(
       () => SearchRepositoryImpl(remoteDataSource: sl(), networkInfo: sl()));
 

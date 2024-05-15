@@ -8,7 +8,7 @@ handleErrors(dio.Response response) {
   } else {
     if (response.statusCode.toString().startsWith('4')) {
       throw ClientException(
-        response.data['code'],
+        response.statusCode,
         response.data['message'] != null ? "${response.data['message']}" : null,
         response.data['errors'],
       );

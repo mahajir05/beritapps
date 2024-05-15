@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                       .state
                       .indexCategorySelected]
                   .title
-                  .toLowerCase()),
+                  ?.toLowerCase()),
         );
       } else {
         completerRefresh = Completer();
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                         .state
                         .indexCategorySelected]
                     .title
-                    .toLowerCase();
+                    ?.toLowerCase();
                 var country = listCountries[context
                     .read<HomeNewsHelperCubit>()
                     .state
@@ -274,7 +274,7 @@ class _HomePageState extends State<HomePage> {
                                   .state
                                   .indexCategorySelected]
                               .title
-                              .toLowerCase()),
+                              ?.toLowerCase()),
                     );
                     return completerRefresh.future;
                   },
@@ -336,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                               .state
                               .indexCategorySelected]
                           .title
-                          .toLowerCase()),
+                          ?.toLowerCase()),
                 );
                 return completerRefresh.future;
               },
@@ -391,7 +391,7 @@ class _HomePageState extends State<HomePage> {
                               .state
                               .indexCategorySelected]
                           .title
-                          .toLowerCase()),
+                          ?.toLowerCase()),
                 );
               } else {
                 refreshIndicatorState.currentState?.show();

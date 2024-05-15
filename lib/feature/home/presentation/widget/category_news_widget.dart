@@ -59,17 +59,17 @@ class _CategoryNewsWidgetState extends State<CategoryNewsWidget> {
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: itemCategory.title.toLowerCase() == 'all'
+                  color: itemCategory.title?.toLowerCase() == 'all'
                       ? const Color(0xFFBBCDDC)
                       : null,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(16),
                   ),
-                  image: itemCategory.title.toLowerCase() == 'all'
+                  image: itemCategory.title?.toLowerCase() == 'all'
                       ? null
                       : DecorationImage(
                           image: AssetImage(
-                            itemCategory.image,
+                            itemCategory.image ?? "",
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -77,8 +77,9 @@ class _CategoryNewsWidgetState extends State<CategoryNewsWidget> {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   padding: EdgeInsets.symmetric(
-                    horizontal:
-                        itemCategory.title.toLowerCase() == 'all' ? 48.w : 32.w,
+                    horizontal: itemCategory.title?.toLowerCase() == 'all'
+                        ? 48.w
+                        : 32.w,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(
@@ -95,7 +96,7 @@ class _CategoryNewsWidgetState extends State<CategoryNewsWidget> {
                   ),
                   child: Center(
                     child: Text(
-                      itemCategory.title,
+                      itemCategory.title ?? "-",
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
